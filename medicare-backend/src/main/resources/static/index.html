@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCare — Smart Medicine Reminder and Doctor Appointment System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Landing Navigation -->
+  <nav class="landing-nav">
+    <a href="index.html" class="brand">
+      <div class="brand-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </div>
+      <span>MediCare</span>
+    </a>
+
+    <ul class="landing-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="login.html">Sign In</a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <button class="theme-toggle-btn" title="Toggle Light/Dark Theme">🌙</button>
+      <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-badge">
+      <span>🛡️ Smart Healthcare Platform</span>
+    </div>
+    <h1 class="hero-title">
+      Never Miss a Dose. <span>Empower Your Health</span> with MediCare.
+    </h1>
+    <p class="hero-subtitle">
+      The intelligent medication reminder and doctor appointment booking platform designed for patient wellness, timely doses, and seamless clinic consultations.
+    </p>
+
+    <div class="hero-cta">
+      <a href="register.html" class="btn btn-primary btn-lg">Create Free Account</a>
+      <a href="login.html" class="btn btn-secondary btn-lg">Sign In to Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Major Feature Cards -->
+  <section id="features" style="padding: 4rem 1rem;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Integrated Services</div>
+      <h2>Engineered for Patient Adherence & Safety</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; margin-top: 0.5rem;">
+        Everything you need to manage your personal health prescriptions, daily dosing routines, and professional clinic visits.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="feature-card">
+        <div class="feature-icon">💊</div>
+        <h3 class="feature-title">Smart Medicine Management</h3>
+        <p class="feature-desc">
+          Organize your prescriptions with precise dosages, meal-timing instructions, medication forms, and customizable color-coded badges.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-card">
+        <div class="feature-icon">⏰</div>
+        <h3 class="feature-title">Dose Reminders & Tracking</h3>
+        <p class="feature-desc">
+          Automated multi-time daily reminders with direct Taken, Skipped, and Snooze actions to record genuine compliance and maintain inventory.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-card">
+        <div class="feature-icon">📸</div>
+        <h3 class="feature-title">Prescription File & Live Camera</h3>
+        <p class="feature-desc">
+          Safely upload PDF and image prescriptions or capture prescriptions instantly using your device's live camera for private medical storage.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-card">
+        <div class="feature-icon">👨‍⚕️</div>
+        <h3 class="feature-title">Doctor Appointments</h3>
+        <p class="feature-desc">
+          Browse verified medical specialists, inspect available consultation time slots, and schedule visits with real-time double-booking prevention.
+        </p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3 class="feature-title">Health Reports & CSV Export</h3>
+        <p class="feature-desc">
+          Track weekly and monthly medication adherence percentages, audit dose timelines, and export comprehensive medical records as CSV or printable PDF.
+        </p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h3 class="feature-title">Stock Refill Alerts</h3>
+        <p class="feature-desc">
+          Automatic pill inventory deductions with low-stock warnings when medicine supplies fall below your custom threshold.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" style="background-color: var(--bg-card); padding: 4.5rem 1.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Workflow</div>
+      <h2>How MediCare Works in 3 Simple Steps</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem; text-align: left;">
+        <div class="card" style="margin: 0;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">01</div>
+          <h4 style="margin-bottom: 0.5rem;">Register Your Regimen</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Add your prescribed medicines, set daily schedules (e.g., 8:00 AM & 8:00 PM), and enter pill stock counts.
+          </p>
+        </div>
+        <div class="card" style="margin: 0;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--teal); margin-bottom: 0.5rem;">02</div>
+          <h4 style="margin-bottom: 0.5rem;">Receive Real-Time Reminders</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            View today's doses on your personalized dashboard. Mark them as Taken, Skipped, or Snooze when busy.
+          </p>
+        </div>
+        <div class="card" style="margin: 0;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">03</div>
+          <h4 style="margin-bottom: 0.5rem;">Consult & Track Progress</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Review your adherence reports with your doctor and book clinic appointments with specialist physicians directly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" style="padding: 4.5rem 1.5rem; max-width: 1100px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
+      <div>
+        <div class="badge badge-success" style="margin-bottom: 0.75rem;">Clinical Excellence</div>
+        <h2 style="margin-bottom: 1rem;">Better Adherence Leads to Faster Recovery</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+          Studies show that over 50% of treatment failures are due to forgotten medication doses. MediCare eliminates guesswork through structured notifications and inventory forecasting.
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+          <li style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="color: var(--success); font-weight: 700;">✓</span> Normalized database ensuring zero lost records
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="color: var(--success); font-weight: 700;">✓</span> Secure BCrypt password hashing & stateless JWT authorization
+          </li>
+          <li style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="color: var(--success); font-weight: 700;">✓</span> Private file storage protecting sensitive patient prescriptions
+          </li>
+        </ul>
+      </div>
+      <div class="card" style="padding: 2rem; background: linear-gradient(135deg, rgba(25, 119, 204, 0.05) 0%, rgba(14, 165, 233, 0.08) 100%);">
+        <h3 style="margin-bottom: 1rem;">Ready to experience organized health management?</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+          Create your account in 30 seconds and take charge of your medical schedule.
+        </p>
+        <a href="register.html" class="btn btn-primary" style="width: 100%;">Get Started with MediCare</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div class="brand" style="margin-bottom: 0.75rem;">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <span>MediCare</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 320px;">
+          Smart Medicine Reminder and Doctor Appointment Booking System. Built with Java, Spring Boot, MySQL, HTML5, CSS3, and JavaScript.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Features</h4>
+        <ul class="footer-links">
+          <li><a href="login.html">Medicine Reminder</a></li>
+          <li><a href="login.html">Doctor Directory</a></li>
+          <li><a href="login.html">Prescriptions</a></li>
+          <li><a href="login.html">Adherence Reports</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Patient Portal</h4>
+        <ul class="footer-links">
+          <li><a href="login.html">Sign In</a></li>
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 1rem;">Legal & Privacy</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Health Data Safety</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 MediCare Healthcare System. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+</body>
+</html>

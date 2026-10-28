@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Prescriptions — MediCare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="sidebar-backdrop"></div>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <span>MediCare</span>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="medicines.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
+          <span>Medicines</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Schedule</span>
+        </a>
+        <a href="prescriptions.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Prescriptions</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Appointments</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Health Reports</span>
+        </a>
+
+        <div class="nav-category" style="margin-top: 1rem;">Account</div>
+        <a href="profile.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile & Security</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="user-avatar">PT</div>
+          <div class="user-info-text">
+            <div class="user-info-name">Patient</div>
+            <div class="user-info-role">Patient Portal</div>
+          </div>
+        </div>
+        <button class="logout-btn" title="Sign Out" style="background:none; border:none; cursor:pointer; color:var(--text-muted); font-size: 1.1rem;">
+          🚪
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="mobile-menu-btn">☰</button>
+          <h2 class="topbar-title">Prescription Records</h2>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="theme-toggle-btn" title="Toggle Light/Dark Theme">🌙</button>
+          <button class="btn btn-outline btn-sm" id="open-camera-modal-btn">📸 Capture Prescription</button>
+          <button class="btn btn-primary btn-sm" id="open-upload-modal-btn">📁 Upload File</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Security Info Banner -->
+        <div class="card" style="margin-bottom: 2rem; background-color: var(--teal-light); border-color: rgba(14, 165, 233, 0.2);">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 1.75rem;">🔒</div>
+            <div>
+              <h4 style="margin-bottom: 0.2rem; color: var(--text-main);">HIPAA-Compliant Private File Storage</h4>
+              <p style="font-size: 0.875rem; color: var(--text-muted);">
+                Prescriptions uploaded or photographed are stored in encrypted private storage on the server with sanitized filenames. They are only accessible to your authenticated patient session.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prescriptions Grid -->
+        <div id="prescriptions-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+          <div style="text-align: center; padding: 2rem 0; grid-column: 1 / -1;"><span class="spinner spinner-primary"></span> Loading prescriptions...</div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="prescriptions-empty-state" style="display: none;">
+          <div class="empty-state-icon">📄</div>
+          <h3 class="empty-state-title">No Prescriptions Uploaded</h3>
+          <p class="empty-state-text">You haven't added any prescription documents yet. You can upload a PDF or image, or capture one directly using your camera.</p>
+          <div style="display: flex; justify-content: center; gap: 0.75rem;">
+            <button class="btn btn-outline" onclick="document.getElementById('open-camera-modal-btn').click()">📸 Capture with Camera</button>
+            <button class="btn btn-primary" onclick="document.getElementById('open-upload-modal-btn').click()">📁 Select File</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Upload Prescription Modal -->
+  <div class="modal-overlay" id="upload-prescription-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">📁 Upload Medical Prescription</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="prescription-upload-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="presc-title" class="form-label">Prescription Title *</label>
+            <input type="text" id="presc-title" class="form-control" placeholder="e.g. Cardiology Prescription — Spring 2026" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="presc-doctor" class="form-label">Prescribing Doctor</label>
+              <input type="text" id="presc-doctor" class="form-control" placeholder="e.g. Dr. Sarah Jenkins">
+            </div>
+            <div class="form-group">
+              <label for="presc-date" class="form-label">Prescription Date *</label>
+              <input type="date" id="presc-date" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="prescription-file-input" class="form-label">Select Prescription File (PDF, JPG, PNG - Max 15MB)</label>
+            <input type="file" id="prescription-file-input" class="form-control" accept=".pdf, .jpg, .jpeg, .png">
+            <div id="file-preview-container" style="display: none;"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="presc-notes" class="form-label">Notes & Diagnosis Details</label>
+            <textarea id="presc-notes" class="form-control" rows="3" placeholder="Enter any specific doctor instructions or prescription details..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Upload Prescription</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Live Camera Capture Modal -->
+  <div class="modal-overlay" id="camera-modal">
+    <div class="modal-container" style="max-width: 560px;">
+      <div class="modal-header">
+        <h3 class="modal-title">📸 Capture Prescription Photo</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <div id="camera-error" style="display: none; color: var(--danger); background: var(--danger-light); padding: 0.75rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;"></div>
+
+        <div style="position: relative; background: #000; border-radius: var(--radius-md); overflow: hidden; min-height: 280px; display: flex; align-items: center; justify-content: center;">
+          <video id="camera-video" autoplay playsinline style="width: 100%; max-height: 380px; object-fit: contain;"></video>
+          <img id="camera-captured-preview" alt="Snapshot Preview" style="display: none; width: 100%; max-height: 380px; object-fit: contain;">
+          <canvas id="camera-canvas" style="display: none;"></canvas>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">
+          Hold the prescription flat under good lighting and align it within the frame.
+        </p>
+      </div>
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button type="button" class="btn btn-secondary modal-cancel">Close</button>
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="button" class="btn btn-primary" id="camera-snap-btn">📸 Take Snapshot</button>
+          <button type="button" class="btn btn-secondary" id="camera-retake-btn" style="display: none;">🔄 Retake</button>
+          <button type="button" class="btn btn-success" id="camera-use-btn" style="display: none;">✓ Use Photo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Document Viewer Modal -->
+  <div class="modal-overlay" id="view-prescription-modal">
+    <div class="modal-container" style="max-width: 800px; max-height: 90vh; display: flex; flex-direction: column;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="view-modal-title">📄 Prescription Document</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="view-modal-body" style="flex: 1; overflow-y: auto; text-align: center; min-height: 380px; padding: 1.5rem;">
+        <div style="text-align: center; padding: 3rem;"><span class="spinner spinner-primary"></span> Loading document...</div>
+      </div>
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button type="button" class="btn btn-secondary modal-cancel">Close</button>
+        <a id="view-modal-download-btn" class="btn btn-primary" download target="_blank">📥 Download Document</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/prescriptions.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — MediCare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="sidebar-backdrop"></div>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <span>MediCare</span>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="dashboard.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="medicines.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
+          <span>Medicines</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Schedule</span>
+        </a>
+        <a href="prescriptions.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Prescriptions</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Appointments</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Health Reports</span>
+        </a>
+
+        <div class="nav-category" style="margin-top: 1rem;">Account</div>
+        <a href="profile.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile & Security</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="user-avatar">PT</div>
+          <div class="user-info-text">
+            <div class="user-info-name">Patient</div>
+            <div class="user-info-role">Patient Portal</div>
+          </div>
+        </div>
+        <button class="logout-btn" title="Sign Out" style="background:none; border:none; cursor:pointer; color:var(--text-muted); font-size: 1.1rem;">
+          🚪
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="mobile-menu-btn">☰</button>
+          <h2 class="topbar-title">Dashboard Overview</h2>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="enable-notifications-btn" class="btn btn-outline btn-sm" title="Enable Desktop Reminders">🔔 Enable Alerts</button>
+          <button class="theme-toggle-btn" title="Toggle Light/Dark Theme">🌙</button>
+          <a href="medicines.html" class="btn btn-primary btn-sm">+ Add Medicine</a>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Content -->
+      <main class="main-content" id="dashboard-content">
+        <!-- Notification Permission Banner -->
+        <div id="notification-banner" class="card" style="display: none; background: var(--warning-light); border-color: rgba(245, 158, 11, 0.3); margin-bottom: 1.5rem; padding: 0.75rem 1.25rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="font-size: 1.4rem;">🔔</span>
+              <div>
+                <strong style="color: var(--text-main); font-size: 0.95rem;">Enable Browser Dose Reminders</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Receive real-time desktop notifications when your scheduled medications are due.</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button id="banner-enable-notifications-btn" class="btn btn-primary btn-sm">Allow Notifications</button>
+              <button id="banner-dismiss-notifications-btn" class="btn btn-secondary btn-sm">Dismiss</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Welcome Greeting Banner -->
+        <div class="card" style="background: linear-gradient(135deg, rgba(25, 119, 204, 0.08) 0%, rgba(14, 165, 233, 0.12) 100%); border-color: rgba(25, 119, 204, 0.2); margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h2 id="dashboard-greeting" style="font-size: 1.6rem; margin-bottom: 0.35rem;">Good Morning!</h2>
+              <p style="color: var(--text-muted);">Welcome to your MediCare control center. Stay consistent with your medication plan today.</p>
+            </div>
+            <div style="display: flex; gap: 0.75rem;">
+              <a href="appointments.html" class="btn btn-outline btn-sm">📅 Book Visit</a>
+              <a href="prescriptions.html" class="btn btn-secondary btn-sm">📸 Upload Rx</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon success">✓</div>
+            <div>
+              <div class="stat-value" id="stat-taken">0</div>
+              <div class="stat-label">Taken Today</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon warning">⏰</div>
+            <div>
+              <div class="stat-value" id="stat-pending">0</div>
+              <div class="stat-label">Pending Doses</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon danger">✕</div>
+            <div>
+              <div class="stat-value" id="stat-skipped">0</div>
+              <div class="stat-label">Skipped Today</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon primary">📈</div>
+            <div>
+              <div class="stat-value" id="stat-adherence">100%</div>
+              <div class="stat-label">Daily Adherence</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Reminder Card -->
+        <div class="card" id="next-reminder-card" style="margin-bottom: 2rem; border-left: 5px solid var(--primary);">
+          <div style="color: var(--text-muted); text-align: center; padding: 0.5rem 0;">Checking for upcoming reminders...</div>
+        </div>
+
+        <!-- Two Columns Layout -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.75rem;">
+          <!-- Left Column: Today's Scheduled Doses & Active Medications -->
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">💊 Today's Medication Schedule</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Mark doses taken/skipped, snooze reminders, or edit/delete schedule items.</p>
+                </div>
+                <a href="schedule.html" class="btn btn-outline btn-sm">Manage Schedule</a>
+              </div>
+              <div id="today-doses-list">
+                <div style="text-align: center; padding: 2rem 0;"><span class="spinner spinner-primary"></span> Loading today's schedule...</div>
+              </div>
+            </div>
+
+            <!-- Active Medications Quick Management -->
+            <div class="card" style="margin-top: 1.5rem;">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">📋 Active Medications Management</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Quickly edit dosage, food instructions, inventory, or delete medications directly from dashboard.</p>
+                </div>
+                <a href="medicines.html" class="btn btn-primary btn-sm">+ Add Medicine</a>
+              </div>
+              <div id="dashboard-medicines-list">
+                <div style="text-align: center; padding: 1.5rem 0;"><span class="spinner spinner-primary"></span> Loading medications...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Doctor Appointments & Stock Warnings -->
+          <div>
+            <!-- Upcoming Appointments -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">👨‍⚕️ Upcoming Visits</h3>
+                <a href="appointments.html" style="font-size: 0.85rem; font-weight: 600;">View All</a>
+              </div>
+              <div id="upcoming-appointments-list">
+                <div style="text-align: center; padding: 1rem 0;"><span class="spinner spinner-primary"></span></div>
+              </div>
+            </div>
+
+            <!-- Low Stock Warnings -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">📦 Pill Inventory Alerts</h3>
+                <a href="medicines.html" style="font-size: 0.85rem; font-weight: 600;">Refill</a>
+              </div>
+              <div id="low-stock-list">
+                <div style="text-align: center; padding: 1rem 0;"><span class="spinner spinner-primary"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Edit Scheduled Dose Modal -->
+  <div class="modal-overlay" id="edit-dose-modal">
+    <div class="modal-container" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title">✏️ Edit Scheduled Dose</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="edit-dose-form">
+        <input type="hidden" id="edit-dose-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Medication:</label>
+            <div id="edit-dose-med-name" style="font-weight: 700; font-size: 1.1rem; color: var(--primary);"></div>
+          </div>
+          <div class="form-group">
+            <label for="edit-dose-datetime" class="form-label">Scheduled Date & Time *</label>
+            <input type="datetime-local" id="edit-dose-datetime" class="form-control" required>
+            <div class="form-hint">Adjust the exact reminder timestamp for this dose.</div>
+          </div>
+          <div class="form-group">
+            <label for="edit-dose-status" class="form-label">Status</label>
+            <select id="edit-dose-status" class="form-select">
+              <option value="PENDING">Pending (Upcoming)</option>
+              <option value="TAKEN">Taken (Deduct Stock & Mark Done)</option>
+              <option value="SKIPPED">Skipped (Missed Dose)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-dose-notes" class="form-label">Notes / Reason</label>
+            <input type="text" id="edit-dose-notes" class="form-control" placeholder="e.g. Rescheduled due to late meal">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quick Edit Medicine Modal -->
+  <div class="modal-overlay" id="quick-edit-medicine-modal">
+    <div class="modal-container" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 class="modal-title">✏️ Edit Medicine Details</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="quick-edit-medicine-form">
+        <input type="hidden" id="quick-med-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="quick-med-name" class="form-label">Medicine Name *</label>
+            <input type="text" id="quick-med-name" class="form-control" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="quick-med-dosage" class="form-label">Dosage *</label>
+              <input type="text" id="quick-med-dosage" class="form-control" placeholder="e.g. 500mg, 1 tablet" required>
+            </div>
+            <div class="form-group">
+              <label for="quick-med-form" class="form-label">Form</label>
+              <select id="quick-med-form" class="form-select">
+                <option value="TABLET">Tablet</option>
+                <option value="CAPSULE">Capsule</option>
+                <option value="LIQUID">Liquid / Syrup</option>
+                <option value="INJECTION">Injection</option>
+                <option value="INHALER">Inhaler</option>
+                <option value="DROPS">Drops</option>
+                <option value="OTHER">Other</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="quick-med-food" class="form-label">Food Timing</label>
+              <select id="quick-med-food" class="form-select">
+                <option value="BEFORE_FOOD">Before Food</option>
+                <option value="AFTER_FOOD">After Food</option>
+                <option value="WITH_FOOD">With Food</option>
+                <option value="EMPTY_STOMACH">Empty Stomach</option>
+                <option value="NO_RESTRICTION">No Restriction</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="quick-med-stock" class="form-label">Available Stock *</label>
+              <input type="number" id="quick-med-stock" class="form-control" min="0" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="quick-med-instructions" class="form-label">Prescription Instructions</label>
+            <input type="text" id="quick-med-instructions" class="form-control" placeholder="e.g. Take with warm water">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update Medicine</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Snooze Modal -->
+  <div class="modal-overlay" id="snooze-modal">
+    <div class="modal-container" style="max-width: 420px;">
+      <div class="modal-header">
+        <h3 class="modal-title">⏰ Snooze Reminder</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="snooze-form">
+        <div class="modal-body">
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            Delay this dose reminder. MediCare will alert you again once the duration elapses.
+          </p>
+          <div class="form-group">
+            <label for="snooze-minutes" class="form-label">Remind me again in:</label>
+            <select id="snooze-minutes" class="form-select">
+              <option value="10">10 Minutes</option>
+              <option value="15" selected>15 Minutes</option>
+              <option value="30">30 Minutes</option>
+              <option value="60">1 Hour</option>
+              <option value="120">2 Hours</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Snooze Dose</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

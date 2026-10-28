@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Appointments — MediCare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="sidebar-backdrop"></div>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <span>MediCare</span>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="medicines.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
+          <span>Medicines</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Schedule</span>
+        </a>
+        <a href="prescriptions.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Prescriptions</span>
+        </a>
+        <a href="appointments.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Appointments</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Health Reports</span>
+        </a>
+
+        <div class="nav-category" style="margin-top: 1rem;">Account</div>
+        <a href="profile.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile & Security</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="user-avatar">PT</div>
+          <div class="user-info-text">
+            <div class="user-info-name">Patient</div>
+            <div class="user-info-role">Patient Portal</div>
+          </div>
+        </div>
+        <button class="logout-btn" title="Sign Out" style="background:none; border:none; cursor:pointer; color:var(--text-muted); font-size: 1.1rem;">
+          🚪
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="mobile-menu-btn">☰</button>
+          <h2 class="topbar-title">Doctor Appointment Schedules</h2>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="theme-toggle-btn" title="Toggle Light/Dark Theme">🌙</button>
+          <button class="btn btn-primary btn-sm" id="open-schedule-modal-btn">+ Schedule Appointment</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Explanatory Banner -->
+        <div class="card" style="margin-bottom: 1.5rem; background-color: var(--primary-light); border-color: rgba(25, 119, 204, 0.2);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="font-size: 1.75rem;">📅</div>
+              <div>
+                <h4 style="margin-bottom: 0.2rem; color: var(--primary-dark);">My Medical Appointment Schedule</h4>
+                <p style="font-size: 0.875rem; color: var(--text-main); margin: 0;">
+                  Keep track of all your upcoming doctor visits, clinical consultations, and specialist review dates and notes in one convenient schedule.
+                </p>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="openScheduleModal()">+ Add Appointment Schedule</button>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="card" style="margin-bottom: 1.5rem; padding: 0.85rem 1.25rem;">
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 2; min-width: 240px;">
+              <input type="text" id="appointment-search-input" class="form-control" placeholder="🔍 Search appointments by doctor, clinic, or reason...">
+            </div>
+            <div style="flex: 1; min-width: 150px;">
+              <select id="appointment-status-filter" class="form-select">
+                <option value="ALL">All Appointments</option>
+                <option value="UPCOMING" selected>Upcoming Only</option>
+                <option value="PAST">Past & Completed</option>
+                <option value="CANCELLED">Cancelled</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming & Past Grid Layout -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+          <!-- Upcoming Appointments List -->
+          <div>
+            <h3 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
+              <span>📅</span> Upcoming Scheduled Visits
+            </h3>
+            <div id="upcoming-appointments-list">
+              <div style="text-align: center; padding: 2rem 0;"><span class="spinner spinner-primary"></span> Loading appointments...</div>
+            </div>
+            <div class="empty-state" id="empty-upcoming-appointments" style="display: none; padding: 2.5rem 1.5rem;">
+              <div class="empty-state-icon">📅</div>
+              <h4 class="empty-state-title">No Upcoming Appointments Scheduled</h4>
+              <p class="empty-state-text">You have no upcoming doctor visits recorded. Click below to add your appointment dates and details.</p>
+              <button class="btn btn-primary btn-sm" onclick="openScheduleModal()">+ Schedule An Appointment</button>
+            </div>
+          </div>
+
+          <!-- Past History Section -->
+          <div style="margin-top: 1rem;">
+            <h3 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem; color: var(--text-muted);">
+              <span>📜</span> Visit History & Past Appointments
+            </h3>
+            <div id="past-appointments-list">
+              <div style="text-align: center; padding: 1.5rem 0;"><span class="spinner spinner-primary"></span></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Schedule / Edit Appointment Modal -->
+  <div class="modal-overlay" id="appointment-modal">
+    <div class="modal-container" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="appointment-modal-title">📅 Schedule Doctor Appointment</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="appointment-form">
+        <input type="hidden" id="appointment-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="app-doctor-name" class="form-label">Doctor / Healthcare Specialist *</label>
+            <input type="text" id="app-doctor-name" class="form-control" placeholder="e.g. Dr. Sarah Jenkins, Dr. Rajan Patel" required>
+            <div class="form-hint">Enter the physician or specialist you will be consulting.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="app-clinic-name" class="form-label">Clinic / Hospital / Location *</label>
+            <input type="text" id="app-clinic-name" class="form-control" placeholder="e.g. City Wellness Center, Room 402" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="app-date" class="form-label">Appointment Date *</label>
+              <input type="date" id="app-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="app-time" class="form-label">Time of Visit *</label>
+              <input type="time" id="app-time" class="form-control" value="10:00" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="app-type" class="form-label">Appointment Type</label>
+            <select id="app-type" class="form-select">
+              <option value="IN_PERSON" selected>In-Person Clinic Visit</option>
+              <option value="ONLINE">Online Teleconsultation</option>
+              <option value="ROUTINE_CHECKUP">Routine Health Checkup</option>
+              <option value="SPECIALIST">Specialist Consultation</option>
+              <option value="LAB_TEST">Lab Test / Diagnostic Scan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="app-reason" class="form-label">Reason for Visit *</label>
+            <input type="text" id="app-reason" class="form-control" placeholder="e.g. Blood pressure review, Diabetes follow-up" required>
+          </div>
+
+          <div class="form-group">
+            <label for="app-notes" class="form-label">Instructions, Symptoms or Preparation Notes</label>
+            <textarea id="app-notes" class="form-control" rows="2" placeholder="e.g. Fasting for 8 hours prior, bring recent blood test reports..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="appointment-modal-submit-btn">Save Appointment Schedule</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quick Reschedule Modal -->
+  <div class="modal-overlay" id="reschedule-modal">
+    <div class="modal-container" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 class="modal-title">🔄 Reschedule Appointment</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="reschedule-form">
+        <input type="hidden" id="reschedule-app-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="reschedule-date" class="form-label">New Appointment Date *</label>
+            <input type="date" id="reschedule-date" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="reschedule-time" class="form-label">New Appointment Time *</label>
+            <input type="time" id="reschedule-time" class="form-control" value="10:00" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update Appointment Time</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/appointments.js"></script>
+</body>
+</html>

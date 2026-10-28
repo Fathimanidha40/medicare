@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedules & Timelines — MediCare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="sidebar-backdrop"></div>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <span>MediCare</span>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="medicines.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
+          <span>Medicines</span>
+        </a>
+        <a href="schedule.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Schedule</span>
+        </a>
+        <a href="prescriptions.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Prescriptions</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Appointments</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Health Reports</span>
+        </a>
+
+        <div class="nav-category" style="margin-top: 1rem;">Account</div>
+        <a href="profile.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile & Security</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini">
+          <div class="user-avatar">PT</div>
+          <div class="user-info-text">
+            <div class="user-info-name">Patient</div>
+            <div class="user-info-role">Patient Portal</div>
+          </div>
+        </div>
+        <button class="logout-btn" title="Sign Out" style="background:none; border:none; cursor:pointer; color:var(--text-muted); font-size: 1.1rem;">
+          🚪
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="mobile-menu-btn">☰</button>
+          <h2 class="topbar-title">Medication Schedules & Reminders</h2>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="theme-toggle-btn" title="Toggle Light/Dark Theme">🌙</button>
+          <button class="btn btn-primary btn-sm" id="open-add-schedule-btn">+ Add Reminder Time</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Explanatory Banner -->
+        <div class="card" style="margin-bottom: 1.5rem; background-color: var(--primary-light); border-color: rgba(25, 119, 204, 0.2);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="font-size: 1.75rem;">⏰</div>
+              <div>
+                <h4 style="margin-bottom: 0.2rem; color: var(--primary-dark);">Medication Schedule & Dose Action Center</h4>
+                <p style="font-size: 0.875rem; color: var(--text-main); margin: 0;">
+                  Track all your daily dose reminder times. Use the <strong>✓ Mark Taken</strong> or <strong>✕ Mark Missed</strong> buttons to check in today's doses directly.
+                </p>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="document.getElementById('open-add-schedule-btn').click()">+ Set New Reminder Time</button>
+          </div>
+        </div>
+        </div>
+
+        <!-- Schedule List Timeline -->
+        <div id="schedules-timeline">
+          <div style="text-align: center; padding: 2rem 0;"><span class="spinner spinner-primary"></span> Loading reminder schedules...</div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="schedules-empty-state" style="display: none;">
+          <div class="empty-state-icon">⏰</div>
+          <h3 class="empty-state-title">No Reminder Schedules Created</h3>
+          <p class="empty-state-text">You haven't configured any reminder times yet. Add a reminder time for an active medicine to start tracking daily doses.</p>
+          <button class="btn btn-primary" onclick="document.getElementById('open-add-schedule-btn').click()">+ Create First Reminder</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Add Schedule Modal -->
+  <div class="modal-overlay" id="schedule-modal">
+    <div class="modal-container" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title">⏰ Set Reminder Time</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="schedule-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="schedule-medicine-id" class="form-label">Select Active Medication *</label>
+            <select id="schedule-medicine-id" class="form-select" required>
+              <option value="">Loading medications...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="schedule-time" class="form-label">Time of Day *</label>
+            <input type="time" id="schedule-time" class="form-control" value="08:00" required>
+            <div class="form-hint">E.g., 08:00 AM for morning dose, 20:00 PM for night dose</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Repeat on Weekdays:</label>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.4rem;">
+              <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.85rem;"><input type="checkbox" name="schedule-days" value="MON" checked> Mon</label>
+              <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.85rem;"><input type="checkbox" name="schedule-days" value="TUE" checked> Tue</label>
+              <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.85rem;"><input type="checkbox" name="schedule-days" value="WED" checked> Wed</label>
+              <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.85rem;"><input type="checkbox" name="schedule-days" value="THU" checked> Thu</label>
+              <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.85rem;"><input type="checkbox" name="schedule-days" value="FRI" checked> Fri</label>
+              <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.85rem;"><input type="checkbox" name="schedule-days" value="SAT" checked> Sat</label>
+              <label style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.85rem;"><input type="checkbox" name="schedule-days" value="SUN" checked> Sun</label>
+            </div>
+            <div class="form-hint">Leave all checked for daily reminders.</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Schedule</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/schedule.js"></script>
+</body>
+</html>

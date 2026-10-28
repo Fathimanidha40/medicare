@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — MediCare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-page">
+
+  <!-- Background decorative floating elements -->
+  <div class="auth-bg-art">
+    <div class="auth-cross">✚</div>
+    <div class="auth-cross">✚</div>
+    <div class="auth-cross">✚</div>
+    <div class="auth-cross">✚</div>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-header">
+      <a href="index.html" class="auth-brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <span>MediCare</span>
+      </a>
+      <h2 class="auth-title">Welcome Back</h2>
+      <p class="auth-subtitle">Sign in to your patient account to view your schedule</p>
+    </div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" id="email" class="form-control" placeholder="patient@example.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@example.com)" required autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <div class="password-input-wrap">
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+          <button type="button" class="password-toggle-btn" title="Toggle password visibility">👁️</button>
+        </div>
+      </div>
+
+      <div class="auth-link-row">
+        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--text-muted);">
+          <input type="checkbox" id="remember-me" checked> Remember this device
+        </label>
+        <a href="#" style="font-size: 0.85rem;" onclick="API.showToast('Please contact system administrator for credential reset.', 'info'); return false;">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">
+        Sign In to MediCare
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      Don't have an account yet? <a href="register.html">Create an Account</a>
+    </div>
+
+    <div style="text-align: center; margin-top: 1.25rem;">
+      <a href="index.html" style="font-size: 0.85rem; color: var(--text-muted);">← Back to Home Page</a>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
